@@ -1,4 +1,4 @@
-import { AnimationParams } from "@/types/ScrollInView";
+import { AnimationParams } from "@/types";
 declare const _default: import("vue").DefineComponent<{
     threshold: {
         type: NumberConstructor;

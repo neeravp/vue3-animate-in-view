@@ -13,7 +13,7 @@ export default [
       file: 'dist/index.js'
     },
     external: ['vue'],
-    plugins: [ vue(), typescript(), terser() ]
+    plugins: [ vue(), typescript({useTsconfigDeclarationDir: true}), terser() ]
   },
 //   {
 //     input: 'src/index.ts',

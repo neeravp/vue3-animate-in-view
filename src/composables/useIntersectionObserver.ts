@@ -1,4 +1,4 @@
-import { intersectionCallback } from "@/types/ScrollInView"
+import { intersectionCallback } from "@/types"
 
 
 const intersectionHandler = (isIntersectingFn: intersectionCallback) =>

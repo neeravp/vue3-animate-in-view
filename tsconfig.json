@@ -14,25 +14,19 @@
       },
       "esModuleInterop": true,
       "sourceMap": true,
-      "typeRoots": [
-          "src/types",
-          "node_modules/@types"
-      ],
       "outDir": "./dist",
-      "declaration": true
+      "declaration": true,
+      "declarationDir": "dist"
     },
 
 
   "include": [
     "src/**/*.js",
     "src/**/*.ts",
+    "src/**/*.vue",
     "src/**/*.d.ts",
     "tests/**/*.ts",
     "tests/**/*.d.ts",
-  ],
-  "exclude": [
-    "node_modules",
-    "src/types"
   ]
     // "files": [
     //     "src/index.d.ts"

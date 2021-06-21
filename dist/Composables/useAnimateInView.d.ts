@@ -1,4 +1,4 @@
-import { AnimationParams } from "@/types/ScrollInView";
+import { AnimationParams } from "@/types";
 declare function apply(targetElement: HTMLElement, propAnimation: string | AnimationParams, propsRepeat: boolean): void;
 declare function cleanup(): void;
 declare const _default: {
