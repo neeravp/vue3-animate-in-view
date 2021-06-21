@@ -10,7 +10,7 @@ export default [
     input: 'src/index.ts',
     output: {
       format: 'es',
-      file: 'dist/index'
+      file: 'dist/index.js'
     },
     external: ['vue'],
     plugins: [ vue(), typescript(), terser() ]
