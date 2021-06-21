@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "Vue3 Directive & Component to animate elements as they appear in viewport",
   "main": "dist/index",
-  "types": "dist/types",
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && rollup --config rollup.config.js",

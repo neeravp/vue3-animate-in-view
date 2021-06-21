@@ -1,6 +1,6 @@
 // import { App } from 'vue'
 
-// declare module '@neeravp/vue-3-animate-in-view'
+declare module '@neeravp/vue-3-animate-in-view'
 export interface AnimationParams extends Object{
     up: string
     down?: string
