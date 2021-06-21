@@ -5,7 +5,7 @@
   "main": "dist/vue3-animate-in-view.cjs.js",
   "module": "dist/vue3-animate-in-view.es.js",
   "jsnext:main": "dist/vue3-animate-in-view.es.js",
-  "types": "src/vue3-animate-in-view.d.ts",
+  "types": "src/vue-3-animate-in-view.d.ts",
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && rollup --config rollup.config.js",
