@@ -13,20 +13,22 @@
           "@/*": ["src/*"]
       },
       "esModuleInterop": true,
-      "sourceMap": true
+      "sourceMap": true,
+      "outDir": "./dist",
+      "declaration": true,
+      "declarationDir": "dist"
     },
 
 
   "include": [
     "src/**/*.js",
     "src/**/*.ts",
+    "src/**/*.vue",
     "src/**/*.d.ts",
     "tests/**/*.ts",
     "tests/**/*.d.ts",
   ]
     // "files": [
-    //     "resources/js/vue-shims.d.ts",
-    //     "resources/js/inertia-shims.d.ts",
-    //     "resources/js/route-shims.d.ts"
+    //     "src/index.d.ts"
     // ]
   }

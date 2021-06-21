@@ -4,9 +4,9 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, onMounted, ref } from "@vue/runtime-core"
-import { AnimationParams } from "@/types/ScrollInView"
-import useAnimateInView from "@/composables/useAnimateInView"
+import { defineComponent, onMounted, ref } from "vue"
+import { AnimationParams } from "@/types"
+import useAnimateInView from "./composables/useAnimateInView"
 import { onBeforeUnmount } from "vue"
 
 export default defineComponent({

@@ -1,4 +1,4 @@
-import { AnimationParams } from "@/types/ScrollInView"
+import { AnimationParams } from "@/types"
 import { computed, ref, watch } from "vue"
 import useIntersectionObserver from "./useIntersectionObserver"
 import useScrollObserver from "./useScrollObserver"
