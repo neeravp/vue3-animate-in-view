@@ -13,7 +13,11 @@
           "@/*": ["src/*"]
       },
       "esModuleInterop": true,
-      "sourceMap": true
+      "sourceMap": true,
+      "typeRoots": [
+          "src/types",
+          "node_modules/@types"
+      ]
     },
 
 
@@ -24,7 +28,11 @@
     "tests/**/*.ts",
     "tests/**/*.d.ts",
   ],
-    "files": [
-        "src/index.d.ts"
-    ]
+  "exclude": [
+    "node_modules",
+    "src/types"
+  ]
+    // "files": [
+    //     "src/index.d.ts"
+    // ]
   }
