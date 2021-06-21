@@ -1,0 +1,37 @@
+{
+  "name": "@neeravp/vue-3-animate-in-view",
+  "version": "0.0.1",
+  "description": "Vue3 Directive & Component to animate elements as they appear in viewport",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && rollup --config rollup.config.js",
+    "test": "npm run build && jest",
+    "deploy": "npm run test && npm version patch && npm publish",
+    "prepublishOnly": "git push --follow-tags"
+  },
+  "keywords": [
+    "vue3",
+    "animate",
+    "in-viewport",
+    "scroll",
+    "reveal"
+  ],
+  "author": "Neerav Pandya",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^3.1.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^8.2.1",
+    "@vue/compiler-sfc": "^3.1.1",
+    "eslint": "^7.29.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.52.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "rollup-plugin-vue": "^6.0.0",
+    "tslib": "^2.3.0",
+    "typescript": "^4.3.4"
+  }
+}

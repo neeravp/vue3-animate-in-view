@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+      "target": "esnext",
+      "module": "esnext",
+      "lib": ["esnext", "dom"],
+      // this enables stricter inference for data properties on `this`
+      "strict": true,
+      "jsx": "preserve",
+      "resolveJsonModule": true,
+      "moduleResolution": "node",
+      "baseUrl": ".",
+      "paths":{
+          "@/*": ["src/*"]
+      },
+      "esModuleInterop": true,
+      "sourceMap": true
+    },
+
+
+  "include": [
+    "src/**/*.js",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "tests/**/*.ts",
+    "tests/**/*.d.ts",
+  ]
+    // "files": [
+    //     "resources/js/vue-shims.d.ts",
+    //     "resources/js/inertia-shims.d.ts",
+    //     "resources/js/route-shims.d.ts"
+    // ]
+  }
