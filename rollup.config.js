@@ -10,19 +10,19 @@ export default [
     input: 'src/index.ts',
     output: {
       format: 'es',
-      file: 'dist/vue3-animate-in-view.es.js'
+      file: 'dist/index'
     },
     external: ['vue'],
     plugins: [ vue(), typescript(), terser() ]
   },
-  {
-    input: 'src/index.ts',
-    output: {
-      format: 'cjs',
-      file: 'dist/vue3-animate-in-view.cjs.js',
-      exports: 'default'
-    },
-    external: ['vue'],
-    plugins: [ vue(), typescript(), terser() ]
-  }
+//   {
+//     input: 'src/index.ts',
+//     output: {
+//       format: 'cjs',
+//       file: 'dist/vue3-animate-in-view.cjs.js',
+//       exports: 'default'
+//     },
+//     external: ['vue'],
+//     plugins: [ vue(), typescript(), terser() ]
+//   }
 ]
