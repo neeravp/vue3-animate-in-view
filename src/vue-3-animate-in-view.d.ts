@@ -1,1 +1,1 @@
-declare module '@neeravp/vue3-animate-in-view' { }
+declare module '@neeravp/vue-3-animate-in-view' { }

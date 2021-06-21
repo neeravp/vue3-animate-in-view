@@ -23,10 +23,8 @@
     "src/**/*.d.ts",
     "tests/**/*.ts",
     "tests/**/*.d.ts",
-  ]
-    // "files": [
-    //     "resources/js/vue-shims.d.ts",
-    //     "resources/js/inertia-shims.d.ts",
-    //     "resources/js/route-shims.d.ts"
-    // ]
+  ],
+    "files": [
+        "src/vue-3-animate-in-view.d.ts"
+    ]
   }

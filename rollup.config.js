@@ -20,7 +20,7 @@ export default [
     output: {
       format: 'cjs',
       file: 'dist/vue3-animate-in-view.cjs.js',
-      exports: 'auto'
+      exports: 'default'
     },
     external: ['vue'],
     plugins: [ vue(), typescript(), terser() ]

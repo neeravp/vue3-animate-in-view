@@ -1,5 +1,5 @@
 import AnimateInViewComponent from './components/AnimateInView.vue'
-import { App } from '@vue/runtime-core'
+import { App } from 'vue'
 import AnimateInViewDirective from './AnimateInView'
 
 export default {
