@@ -1,8 +1,17 @@
 {
   "name": "@neeravp/vue-3-animate-in-view",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Vue3 Directive & Component to animate elements as they appear in viewport",
-  "main": "dist/index",
+  "main": "dist/vue-3-animate-in-view.ssr.js",
+  "browser": "dist/vue-3-animate-in-view.esm.js",
+  "module": "dist/vue-3-animate-in-view.esm.js",
+  "types": "vue3-animateInView.d.ts",
+  "files": [
+    "dist/*",
+    "vue3-animateInView.d.ts",
+    "src/**/*.vue"
+  ],
+  "sideEffects": false,
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && rollup --config rollup.config.js",
@@ -23,19 +32,28 @@
     "url": "https://github.com/neeravp/vue3-animate-in-view"
   },
   "license": "MIT",
-  "dependencies": {
+  "peerDependencies": {
     "vue": ">=3.1.0"
   },
   "devDependencies": {
-    "@rollup/plugin-typescript": "^8.2.1",
-    "@vue/compiler-sfc": "^3.1.1",
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-typescript": "^7.14.5",
+    "@rollup/plugin-alias": "^3.1.2",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@rollup/plugin-replace": "^2.4.2",
+    "@vue/compiler-sfc": "^3.1.2",
+    "cross-env": "^7.0.3",
     "eslint": "^7.29.0",
+    "postcss": "^8.3.5",
     "rimraf": "^3.0.2",
     "rollup": "^2.52.1",
+    "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.30.0",
     "rollup-plugin-vue": "^6.0.0",
-    "tslib": "^2.3.0",
     "typescript": "^4.3.4"
   }
 }

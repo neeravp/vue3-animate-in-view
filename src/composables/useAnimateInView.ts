@@ -1,62 +1,59 @@
-import { AnimationParams } from "@/types"
-import { computed, ref, watch } from "vue"
+import { AnimationParams } from "@/types/index"
+import { computed, Ref, watch } from "vue"
 import useIntersectionObserver from "./useIntersectionObserver"
 import useScrollObserver from "./useScrollObserver"
 
+    function apply(
+        el:HTMLElement,
+        animation:string|AnimationParams,
+        repeat:boolean,
+        isInView: Ref<boolean>,
+        scrollDirection: Ref<string>
+    ):void {
+        // console.log(targetElement, propAnimation, propsRepeat)
 
-    const isInView = ref<boolean>(false)
-    const scrollDirection = ref('down')
-    let animation:string|AnimationParams
-    let repeat:boolean
-    let el:HTMLElement
 
-    const animationClass = computed(() => {
-        let _animationClass = ''
-        if(typeof animation === 'string') {
-            _animationClass = animation
+        const animationClass = computed(() => {
+            let _animationClass = ''
+            if(typeof animation === 'string') {
+                _animationClass = animation
+            }
+            if(typeof animation === 'object') {
+                _animationClass = <string> (scrollDirection.value === 'down' ? animation.down : animation.up)
+            }
+
+            return _animationClass
+        })
+
+        const scrollCallback = (lastScrollTop:number, currentScrollTop:number ) => {
+            scrollDirection.value = currentScrollTop < lastScrollTop ? 'up' : 'down'
+            lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop
         }
-        if(typeof animation === 'object') {
-            _animationClass = <string> (scrollDirection.value === 'down' ? animation.down : animation.up)
+
+        const intersectCallback = (entry:IntersectionObserverEntry, isInView: Ref<boolean>) => {
+            if(entry.isIntersecting) {
+                el.classList.add(animationClass.value)
+                isInView.value = true
+            }
+            else {
+                // el.classList.remove(animationClass.value)
+                isInView.value = false
+            }
         }
 
-        return _animationClass
-    })
+        const isDirectionAgnostic  = ():boolean => { return typeof animation === 'string'}
 
-    function isDirectionAgnostic():boolean { return typeof animation === 'string'}
-
-    function isBiDirectional():boolean {
-        return !!(typeof animation === 'object' && animation.up !== '' && animation.down !== '')
-    }
-
-    const scrollCallback = (lastScrollTop:number, currentScrollTop:number ) => {
-        scrollDirection.value = currentScrollTop < lastScrollTop ? 'up' : 'down'
-        lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop
-    }
-
-    const intersectCallback = (entry:IntersectionObserverEntry) => {
-        if(entry.isIntersecting) {
-            el.classList.add(animationClass.value)
-            isInView.value = true
+        const isBiDirectional = ():boolean => {
+            return !!(typeof animation === 'object' && animation.up !== '' && animation.down !== '')
         }
-        else {
-            // el.classList.remove(animationClass.value)
-            isInView.value = false
-        }
-    }
 
-    function apply(targetElement:HTMLElement, propAnimation:string|AnimationParams, propsRepeat:boolean):void {
-        console.log(targetElement, propAnimation, propsRepeat)
-        animation = propAnimation
-        repeat = propsRepeat
-        el = targetElement
-
-        useIntersectionObserver.observeElement(el, intersectCallback)
+        useIntersectionObserver.observeElement(el, isInView, intersectCallback)
         useScrollObserver.detectScrollDirection(scrollCallback)
 
         watch([isInView, scrollDirection],( newValues, previousValues) => {
             const [isInView, scrollDirection] = newValues
             if(!repeat && isDirectionAgnostic()) {
-                console.log('No Repeat & isDirectionAgnostic: false')
+                console.log('No Repeat & isDirectionAgnostic: true')
                 return
             } else if(!isInView) {
                 console.log('Not in view')
