@@ -1,4 +1,4 @@
-import { scrollDetectionCallback } from "@/types";
+import { scrollDetectionCallback } from "@/types/index";
 declare function detectScrollDirection(scrollDetectionHandler: scrollDetectionCallback): void;
 declare function removeEventListener(): void;
 declare const _default: {

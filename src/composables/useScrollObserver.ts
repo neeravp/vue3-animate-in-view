@@ -1,4 +1,4 @@
-import { scrollDetectionCallback } from "@/types"
+import { scrollDetectionCallback } from "@/types/index"
 
 
 let handler: {():void}
