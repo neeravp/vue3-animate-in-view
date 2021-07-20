@@ -1,6 +1,6 @@
 {
   "name": "@neeravp/vue-3-animate-in-view",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vue3 Directive & Component to animate elements as they appear in viewport",
   "main": "dist/vue-3-animate-in-view.ssr.js",
   "browser": "dist/vue-3-animate-in-view.esm.js",
