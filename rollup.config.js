@@ -83,9 +83,12 @@ const esConfig = {
         exports: 'named'
     },
     plugins: [
-        // resolve({moduleDirectories: ['src', 'node_modules']}),
         replace(replaceOptions),
-        // ...preVue,
+        ...preVue,
+        resolve({
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+          moduleDirectories: ['src', 'node_modules'],
+        }),
         vue(),
         ...postVue,
         babel({
