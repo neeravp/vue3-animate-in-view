@@ -7,7 +7,6 @@ const intersectionHandler = (isIntersectingFn, isInView) => function handleInter
 };
 
 function observeElement(element, isInView, isIntersectingFn, options) {
-  console.log(element);
   const handleIntersection = intersectionHandler(isIntersectingFn, isInView);
   const observer = new IntersectionObserver(handleIntersection, options);
   observer.observe(element);
@@ -94,13 +93,10 @@ function apply(el, animation, repeat, isInView, scrollDirection) {
     const [isInView, scrollDirection] = newValues;
 
     if (!repeat && isDirectionAgnostic()) {
-      console.log('No Repeat & isDirectionAgnostic: true');
       return;
     } else if (!isInView) {
-      console.log('Not in view');
       el.classList.remove(animationClass.value);
     } else if (isBiDirectional()) {
-      console.log('isBiDirectional');
       animation = animation;
 
       if (scrollDirection === 'up') {
@@ -147,7 +143,6 @@ var script = defineComponent({
     const isInView = ref(false);
     const scrollDirection = ref('down');
     onMounted(() => {
-      console.log(target.value);
       useAnimateInView.apply(target.value, props.animation, props.repeat, isInView, scrollDirection);
     });
     onBeforeUnmount(() => useAnimateInView.cleanup());
@@ -183,7 +178,6 @@ script.__file = "src/components/AnimateInView.vue";
 
 const animateInView = {
   mounted(el, binding) {
-    console.log(binding);
     const isInView = ref(false);
     const scrollDirection = ref('down');
     const animation = binding.value;

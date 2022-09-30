@@ -11,6 +11,7 @@ import replace from '@rollup/plugin-replace'
 import vue from 'rollup-plugin-vue'
 import babel from '@rollup/plugin-babel'
 import { terser } from 'rollup-plugin-terser'
+import strip from '@rollup/plugin-strip'
 
 // Get browserslist config and remove ie from es build targets
 const esbrowserslist = fs.readFileSync('./.browserslistrc')
@@ -102,6 +103,12 @@ const esConfig = {
                   },
                 ],
               ],
+        }),
+        strip({
+          include:[
+            '**/*.js',
+            '**/*.ts'
+          ]
         })
     ]
 }
@@ -138,7 +145,13 @@ const umdConfig = {
               ],
             ],
       }),
-    ],
+      strip({
+        include:[
+          '**/*.js',
+          '**/*.ts'
+        ]
+      })
+    ]
 }
 
 const unpkgConfig = {
@@ -173,6 +186,12 @@ const unpkgConfig = {
                 ecma: 5,
             },
         }),
+        strip({
+          include:[
+            '**/*.js',
+            '**/*.ts'
+          ]
+        })
     ]
 }
 

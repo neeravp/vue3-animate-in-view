@@ -5,7 +5,6 @@
 };
 
 function observeElement(element, isInView, isIntersectingFn, options) {
-  console.log(element);
   const handleIntersection = intersectionHandler(isIntersectingFn, isInView);
   const observer = new IntersectionObserver(handleIntersection, options);
   observer.observe(element);
@@ -88,13 +87,10 @@ var useScrollObserver = {
     const [isInView, scrollDirection] = newValues;
 
     if (!repeat && isDirectionAgnostic()) {
-      console.log('No Repeat & isDirectionAgnostic: true');
       return;
     } else if (!isInView) {
-      console.log('Not in view');
       el.classList.remove(animationClass.value);
     } else if (isBiDirectional()) {
-      console.log('isBiDirectional');
       animation = animation;
 
       if (scrollDirection === 'up') {
@@ -139,7 +135,6 @@ var useAnimateInView = {
     const isInView = vue.ref(false);
     const scrollDirection = vue.ref('down');
     vue.onMounted(() => {
-      console.log(target.value);
       useAnimateInView.apply(target.value, props.animation, props.repeat, isInView, scrollDirection);
     });
     vue.onBeforeUnmount(() => useAnimateInView.cleanup());
@@ -195,7 +190,6 @@ styleInject(css_248z);script.render = render;
 script.__scopeId = "data-v-679b8a2b";
 script.__file = "src/components/AnimateInView.vue";const animateInView = {
   mounted(el, binding) {
-    console.log(binding);
     const isInView = vue.ref(false);
     const scrollDirection = vue.ref('down');
     const animation = binding.value;
